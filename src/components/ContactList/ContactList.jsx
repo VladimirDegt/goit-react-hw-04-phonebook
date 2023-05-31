@@ -7,11 +7,14 @@ function ContactList({ findValue, findContact, onDeleteContact}){
       {findValue && findContact().map((item)=>{
       return (
         <StyledItemList key={item.id}>
-          <span>{item.name}: {item.number}</span>
+          <span>{item.name}: </span>
+          <a href={`tel:+38${item.number}`}>{item.number}</a>
+          <span>{' Viber'}: </span>
+          <a href={`viber://chat?number=+38${item.number}`}>{item.number}</a>
           <button 
             type="button"
             onClick={()=>onDeleteContact(item.id)}
-            >delete
+            > delete
           </button>
         </StyledItemList>
       ) 

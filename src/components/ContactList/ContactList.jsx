@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { StyledList, StyledItemList } from './ContactList.styled';
 
-function ContactList({ findValue, findContact, onDeleteContact}){
+function ContactList({ findContact, onDeleteContact}){
   return (
     <StyledList> 
-      {findValue && findContact().map((item)=>{
+      { findContact().map((item)=>{
       return (
         <StyledItemList key={item.id}>
           <span>{item.name}: </span>

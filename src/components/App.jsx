@@ -10,10 +10,8 @@ export function App(){
   const [contacts, setContacts] = useState([])
 
   useEffect(()=>{
-    if(!getItemLocalStorage()){
-      setItemLocalStorage(contacts)
-    } else {
-        setContacts(JSON.parse(getItemLocalStorage()))
+    if(getItemLocalStorage()){ 
+      setContacts(JSON.parse(getItemLocalStorage()))
     }
   }, []);
 
